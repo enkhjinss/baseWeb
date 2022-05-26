@@ -24,16 +24,20 @@ export const BasicMenu = () => {
             title: "Order",
             icon: <ContentCopy fontSize="small" />,
         },
+        {
+            href: "/users",
+            title: "User",
+            icon: <ContentCopy fontSize="small" />,
+        },
     ];
     const { push } = useRouter();
     return (
         <Paper sx={{ width: 320, maxWidth: "100%" }}>
             <MenuList>
                 {item.map(({ href, title, icon }, index) => {
-                    console.log(href);
-
                     return (
                         <MenuItem
+                            key={index}
                             onClick={() => {
                                 push(href);
                             }}
